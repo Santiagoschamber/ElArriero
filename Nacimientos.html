@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nuevo Nacimiento</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221d10",
+                        "foreground-light": "#1b180d",
+                        "foreground-dark": "#f3f0e7",
+                        "subtle-light": "#9a864c",
+                        "subtle-dark": "#9a864c",
+                        "input-light": "#f3f0e7",
+                        "input-dark": "#3a3320"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<div class="flex flex-col h-screen justify-between">
+<div class="flex-grow overflow-y-auto">
+<header class="flex items-center p-4">
+<button class="p-2 -ml-2">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold text-center flex-1">Nuevo Nacimiento</h1>
+<div class="w-8"></div>
+</header>
+<main class="px-4 pb-4 space-y-6">
+<div>
+<h2 class="text-base font-semibold mb-2">Establecimiento</h2>
+<button class="w-full flex items-center justify-between bg-input-light dark:bg-input-dark p-4 rounded-lg">
+<span class="text-base">Finca La Esperanza</span>
+<span class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">chevron_right</span>
+</button>
+</div>
+<div>
+<h2 class="text-base font-semibold mb-2">Rodeo</h2>
+<button class="w-full flex items-center justify-between bg-input-light dark:bg-input-dark p-4 rounded-lg">
+<span class="text-base">Rodeo A</span>
+<span class="material-symbols-outlined text-subtle-light dark:text-subtle-dark">add</span>
+</button>
+</div>
+<div class="space-y-4">
+<h2 class="text-base font-semibold">Datos del Nacimiento</h2>
+<div class="relative">
+<label class="absolute -top-2 left-3 px-1 bg-input-light dark:bg-input-dark text-xs text-subtle-light dark:text-subtle-dark" for="date">Fecha de Registro</label>
+<input class="form-input w-full bg-input-light dark:bg-input-dark rounded-lg border-none focus:ring-2 focus:ring-primary h-14 p-4 placeholder:text-subtle-light dark:placeholder:text-subtle-dark" id="date" placeholder="DD/MM/AAAA" type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-subtle-light dark:text-subtle-dark">calendar_today</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium mb-1" for="males">Machos</label>
+<input class="form-input w-full bg-input-light dark:bg-input-dark rounded-lg border-none focus:ring-2 focus:ring-primary h-14 p-4 placeholder:text-subtle-light dark:placeholder:text-subtle-dark" id="males" placeholder="0" type="number" value="0"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="females">Hembras</label>
+<input class="form-input w-full bg-input-light dark:bg-input-dark rounded-lg border-none focus:ring-2 focus:ring-primary h-14 p-4 placeholder:text-subtle-light dark:placeholder:text-subtle-dark" id="females" placeholder="0" type="number" value="0"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="total">Cantidad total de nacimientos</label>
+<input class="form-input w-full bg-input-light dark:bg-input-dark rounded-lg border-none focus:ring-2 focus:ring-primary h-14 p-4 placeholder:text-subtle-light dark:placeholder:text-subtle-dark text-subtle-light dark:text-subtle-dark" id="total" readonly="" type="number" value="0"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-1" for="weight">Peso (opcional)</label>
+<div class="relative">
+<input class="form-input w-full bg-input-light dark:bg-input-dark rounded-lg border-none focus:ring-2 focus:ring-primary h-14 p-4 placeholder:text-subtle-light dark:placeholder:text-subtle-dark" id="weight" placeholder="Ingresar peso promedio" type="number"/>
+<span class="absolute inset-y-0 right-4 flex items-center text-subtle-light dark:text-subtle-dark">kg</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark shadow-[0_-2px_10px_rgba(0,0,0,0.1)]">
+<button class="w-full h-12 bg-primary text-foreground-dark dark:text-foreground-dark font-bold rounded-xl shadow-md hover:bg-primary/90 transition-colors">
+                Guardar
+            </button>
+</div>
+</div>
+<script>
+        const malesInput = document.getElementById('males');
+        const femalesInput = document.getElementById('females');
+        const totalInput = document.getElementById('total');
+        function updateTotal() {
+            const males = parseInt(malesInput.value) || 0;
+            const females = parseInt(femalesInput.value) || 0;
+            totalInput.value = males + females;
+        }
+        malesInput.addEventListener('input', updateTotal);
+        femalesInput.addEventListener('input', updateTotal);
+    </script>
+
+</body></html>

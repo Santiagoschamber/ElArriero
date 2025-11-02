@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registros</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#ecb613",
+            "background-light": "#f8f8f6",
+            "background-dark": "#221d10",
+            "foreground-light": "#1b180d",
+            "foreground-dark": "#f8f8f6",
+            "input-light": "#f3f0e7",
+            "input-dark": "#2a2414",
+            "placeholder-light": "#9a864c",
+            "placeholder-dark": "#a39d8b"
+          },
+          fontFamily: {
+            "display": ["Lexend"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: 100dvh;
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex flex-col h-screen w-full">
+<header class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<button class="text-foreground-light dark:text-foreground-dark flex items-center justify-center size-10">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<h1 class="text-lg font-bold text-foreground-light dark:text-foreground-dark flex-1 text-center pr-10">Registros</h1>
+</header>
+<main class="flex-1 px-4 pt-4 pb-6 overflow-y-auto">
+    <div class="grid grid-cols-1 gap-3">
+    
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="NuevoServicio.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">transgender</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Servicios</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="Nacimientos.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">pets</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Nacimientos</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="RegistrarMortandad.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">skull</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Mortandad</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="MoverVentaCompra.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">currency_exchange</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Venta/Compra</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="MoverAnimales.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">sync_alt</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Movimientos Internos</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="trabajos.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">vaccines</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Trabajos</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="destetes.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">cut</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Destetes</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+        <a class="flex items-center justify-between p-4 bg-input-light dark:bg-input-dark rounded-lg h-16" href="cambios-potrero.html">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/20 rounded-lg text-primary">
+                    <span class="material-symbols-outlined">fence</span>
+                </div>
+                <span class="font-medium text-foreground-light dark:text-foreground-dark">Cambios de Potrero</span>
+            </div>
+            <span class="material-symbols-outlined text-foreground-light/70 dark:text-foreground-dark/70">chevron_right</span>
+        </a>
+
+    </div>
+</main>
+</div>
+
+</body></html>

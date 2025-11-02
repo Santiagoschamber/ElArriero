@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Registrar Venta / Compra</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221d10",
+                        "text-light": "#221d10",
+                        "text-dark": "#f8f8f6",
+                        "subtext-light": "#796e53",
+                        "subtext-dark": "#a8a29e",
+                        "surface-light": "#f3f0e7",
+                        "surface-dark": "#3a362a",
+                        "border-light": "#e7e1cf",
+                        "border-dark": "#4f4a3a"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+    <div class="flex flex-col h-screen justify-between">
+        <div class="flex-grow overflow-y-auto">
+            <header class="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+                <div class="flex items-center p-4">
+                    <button class="p-2 rounded-full hover:bg-surface-light dark:hover:bg-surface-dark">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <h1 class="flex-1 text-center text-lg font-bold pr-10">Registrar Venta / Compra</h1>
+                </div>
+            </header>
+            <main class="p-4 space-y-6">
+                <div>
+                    <h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark mb-2 px-2">ESTABLECIMIENTO</h2>
+                    <button class="w-full text-left flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-xl hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-background-light dark:bg-background-dark p-3 rounded-full">
+                                <span class="material-symbols-outlined text-primary">cottage</span>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-text-light dark:text-text-dark">Establecimiento 1</p>
+                                <p class="text-sm text-subtext-light dark:text-subtext-dark">El Rancho</p>
+                            </div>
+                        </div>
+                        <span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark">chevron_right</span>
+                    </button>
+                </div>
+
+                <div class="p-1 bg-surface-light dark:bg-surface-dark rounded-xl flex">
+                    <button id="btn-venta" class="w-1/2 bg-primary text-text-light font-bold py-3 rounded-lg">Venta</button>
+                    <button id="btn-compra" class="w-1/2 text-subtext-light dark:text-subtext-dark font-bold py-3 rounded-lg">Compra</button>
+                </div>
+
+                <div class="space-y-6" id="venta-fields">
+                    <div>
+                        <h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark mb-2 px-2">SELECCIONAR RODEO</h2>
+                        <button class="w-full text-left flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-xl hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-background-light dark:bg-background-dark p-3 rounded-full">
+                                    <span class="material-symbols-outlined text-primary">logout</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-text-light dark:text-text-dark">Rodeo 1</p>
+                                    <p class="text-sm text-subtext-light dark:text-subtext-dark">12 animales</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark">chevron_right</span>
+                        </button>
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark mb-2 px-2">ANIMALES</h2>
+                        <!-- Botón para abrir el modal -->
+                        <button id="open-modal-button" class="w-full text-left flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-xl hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-background-light dark:bg-background-dark p-3 rounded-full">
+                                    <span class="material-symbols-outlined text-primary">checklist</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-text-light dark:text-text-dark">Seleccionar Animal/es</p>
+                                    <!-- Texto que mostrará el contador -->
+                                    <p id="animal-count-text" class="text-sm text-subtext-light dark:text-subtext-dark">0 seleccionados</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark">chevron_right</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hidden space-y-6" id="compra-fields">
+                    <div>
+                        <h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark mb-2 px-2">SELECCIONAR RODEO DE DESTINO</h2>
+                        <button class="w-full text-left flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-xl hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-background-light dark:bg-background-dark p-3 rounded-full">
+                                    <span class="material-symbols-outlined text-primary">login</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-text-light dark:text-text-dark">Seleccionar Rodeo</p>
+                                    <p class="text-sm text-subtext-light dark:text-subtext-dark">o crear nuevo rodeo</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark">expand_more</span>
+                        </button>
+                    </div>
+                    <div>
+                        <h2 class="text-sm font-semibold text-subtext-light dark:text-subtext-dark mb-2 px-2">ANIMALES</h2>
+                        <a href="IngresarAnimalesNuevos.html" class="w-full text-left flex items-center justify-between p-3 bg-surface-light dark:bg-surface-dark rounded-xl hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+                            <div class="flex items-center gap-4">
+                                <div class="bg-background-light dark:bg-background-dark p-3 rounded-full">
+                                    <span class="material-symbols-outlined text-primary">group_add</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-text-light dark:text-text-dark">Ingresar Animales Nuevos</p>
+                                    <p class="text-sm text-subtext-light dark:text-subtext-dark">0 ingresados</p>
+                                </div>
+                            </div>
+                            <span class="material-symbols-outlined text-subtext-light dark:text-subtext-dark">chevron_right</span>
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <footer class="p-4 bg-background-light dark:bg-background-dark">
+            <button id="confirm-button" class="w-full bg-primary text-text-light font-bold py-4 rounded-xl hover:bg-primary/90 transition-colors">
+                Confirmar Venta
+            </button>
+        </footer>
+    </div>
+
+    <!-- ===== MODAL PARA SELECCIONAR ANIMALES ===== -->
+    <div class="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50 hidden" id="animal-modal">
+        <div class="bg-background-light dark:bg-background-dark w-full max-h-[90dvh] rounded-t-2xl flex flex-col">
+            <header class="p-4 border-b border-border-light dark:border-border-dark flex items-center justify-between sticky top-0 bg-background-light dark:bg-background-dark">
+                <h2 class="text-lg font-bold">Seleccionar Animales</h2>
+                <button class="p-2 rounded-full hover:bg-surface-light dark:hover:bg-surface-dark" id="close-modal-button">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </header>
+            <div class="p-4 flex-grow overflow-y-auto">
+                <div class="relative mb-4">
+                    <input class="form-input w-full bg-surface-light dark:bg-surface-dark border-2 border-border-light dark:border-border-dark rounded-xl py-3 pl-10 pr-4 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Buscar animal..." type="text" />
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-subtext-light dark:text-subtext-dark">search</span>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left">
+                        <thead class="text-xs text-subtext-light dark:text-subtext-dark uppercase">
+                            <tr class="flex">
+                                <th class="p-2 w-10 flex-shrink-0" scope="col"><input id="select-all-checkbox" class="form-checkbox rounded text-primary focus:ring-primary" type="checkbox" /></th>
+                                <th class="p-2 whitespace-nowrap flex items-center flex-1" scope="col">Categoría <span class="material-symbols-outlined text-xs ml-1">unfold_more</span></th>
+                                <th class="p-2 whitespace-nowrap flex items-center flex-1" scope="col">Raza <span class="material-symbols-outlined text-xs ml-1">unfold_more</span></th>
+                                <th class="p-2 whitespace-nowrap flex items-center flex-1" scope="col">Estado Fisiológico <span class="material-symbols-outlined text-xs ml-1">unfold_more</span></th>
+                            </tr>
+                        </thead>
+                        <tbody id="animal-table-body">
+                            <tr class="border-b border-border-light dark:border-border-dark flex items-center">
+                                <td class="p-2 w-10 flex-shrink-0"><input class="form-checkbox animal-checkbox rounded text-primary focus:ring-primary" type="checkbox" /></td>
+                                <td class="p-2 font-medium flex-1">Vaca</td>
+                                <td class="p-2 flex-1">Angus Negro</td>
+                                <td class="p-2 flex-1">Preñada</td>
+                            </tr>
+                             <tr class="border-b border-border-light dark:border-border-dark flex items-center">
+                                <td class="p-2 w-10 flex-shrink-0"><input class="form-checkbox animal-checkbox rounded text-primary focus:ring-primary" type="checkbox" /></td>
+                                <td class="p-2 font-medium flex-1">Vaquillona</td>
+                                <td class="p-2 flex-1">Hereford</td>
+                                <td class="p-2 flex-1">Vacía</td>
+                            </tr>
+                            <tr class="border-b border-border-light dark:border-border-dark flex items-center">
+                                <td class="p-2 w-10 flex-shrink-0"><input checked class="form-checkbox animal-checkbox rounded text-primary focus:ring-primary" type="checkbox" /></td>
+                                <td class="p-2 font-medium flex-1">Ternero</td>
+                                <td class="p-2 flex-1">Brangus</td>
+                                <td class="p-2 flex-1">-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <footer class="p-4 border-t border-border-light dark:border-border-dark sticky bottom-0 bg-background-light dark:bg-background-dark">
+                <button id="confirm-selection-button" class="w-full bg-primary text-text-light font-bold py-4 rounded-xl hover:bg-primary/90 transition-colors">
+                    Confirmar Selección (0)
+                </button>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // --- LÓGICA PARA EL INTERRUPTOR VENTA/COMPRA ---
+        const btnVenta = document.getElementById('btn-venta');
+        const btnCompra = document.getElementById('btn-compra');
+        const ventaFields = document.getElementById('venta-fields');
+        const compraFields = document.getElementById('compra-fields');
+        const confirmButton = document.getElementById('confirm-button');
+
+        btnVenta.addEventListener('click', () => {
+            ventaFields.classList.remove('hidden');
+            compraFields.classList.add('hidden');
+            confirmButton.textContent = 'Confirmar Venta';
+
+            btnVenta.classList.add('bg-primary', 'text-text-light');
+            btnVenta.classList.remove('text-subtext-light', 'dark:text-subtext-dark');
+            btnCompra.classList.remove('bg-primary', 'text-text-light');
+            btnCompra.classList.add('text-subtext-light', 'dark:text-subtext-dark');
+        });
+
+        btnCompra.addEventListener('click', () => {
+            ventaFields.classList.add('hidden');
+            compraFields.classList.remove('hidden');
+            confirmButton.textContent = 'Confirmar Compra';
+
+            btnCompra.classList.add('bg-primary', 'text-text-light');
+            btnCompra.classList.remove('text-subtext-light', 'dark:text-subtext-dark');
+            btnVenta.classList.remove('bg-primary', 'text-text-light');
+            btnVenta.classList.add('text-subtext-light', 'dark:text-subtext-dark');
+        });
+
+        // --- LÓGICA PARA EL MODAL DE SELECCIÓN DE ANIMALES ---
+        const modal = document.getElementById('animal-modal');
+        const openModalButton = document.getElementById('open-modal-button');
+        const closeModalButton = document.getElementById('close-modal-button');
+        const confirmSelectionButton = document.getElementById('confirm-selection-button');
+        const animalCountText = document.getElementById('animal-count-text');
+        const animalCheckboxes = document.querySelectorAll('.animal-checkbox');
+        const selectAllCheckbox = document.getElementById('select-all-checkbox');
+
+        // Función para actualizar el contador de animales seleccionados
+        function updateSelectedCount() {
+            const selectedCount = document.querySelectorAll('.animal-checkbox:checked').length;
+            animalCountText.textContent = `${selectedCount} seleccionado${selectedCount !== 1 ? 's' : ''}`;
+            confirmSelectionButton.textContent = `Confirmar Selección (${selectedCount})`;
+        }
+
+        // Abrir el modal
+        openModalButton.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+        });
+
+        // Cerrar el modal con el botón de "X"
+        closeModalButton.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        // Confirmar selección y cerrar el modal
+        confirmSelectionButton.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        // Cerrar el modal al hacer clic fuera de él (en el fondo oscuro)
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+        
+        // Actualizar contador cada vez que se marca/desmarca un animal
+        animalCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateSelectedCount);
+        });
+        
+        // Lógica para el checkbox "Seleccionar todos"
+        selectAllCheckbox.addEventListener('change', (event) => {
+             animalCheckboxes.forEach(checkbox => {
+                checkbox.checked = event.target.checked;
+            });
+            updateSelectedCount();
+        });
+
+        // Llamada inicial para establecer el contador correcto al cargar la página
+        updateSelectedCount();
+// --- REDIRECCIÓN DEL BOTÓN PRINCIPAL ---
+confirmButton.addEventListener('click', () => {
+    // Antes de redirigir, aquí podrías agregar lógica para guardar los datos.
+    console.log('Confirmando operación...');
+    
+    // Redirige al usuario a la página de confirmación.
+    window.location.href = 'registros.html'; 
+});
+    </script>
+</body>
+
+</html>
