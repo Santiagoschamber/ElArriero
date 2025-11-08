@@ -1,259 +1,248 @@
 <!DOCTYPE html>
-<html lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Modificar Servicio</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            primary: "#ecb613",
-            "background-light": "#f8f8f6",
-            "background-dark": "#221d10",
-            "neutral-light": "#f3f0e7",
-            "neutral-dark": "#3a3321",
-            "text-light": "#1b180d",
-            "text-dark": "#f8f8f6",
-            "text-muted-light": "#9a864c",
-            "text-muted-dark": "#a19985",
-            "border-light": "#e7e1cf",
-            "border-dark": "#4c4430",
-          },
-          fontFamily: {
-            display: ["Lexend", "sans-serif"],
-          },
-          borderRadius: {
-            DEFAULT: "0.5rem",
-            lg: "0.75rem",
-            full: "9999px",
-          },
-        },
-      },
-    };
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  </head>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Modificar Servicio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#ecb613",
+                        "background-light": "#f8f8f6",
+                        "background-dark": "#221d10",
+                        "neutral-light": "#f3f0e7",
+                        "neutral-dark": "#3a3321",
+                        "text-light": "#1b180d",
+                        "text-dark": "#f8f8f6",
+                        "text-muted-light": "#9a864c",
+                        "text-muted-dark": "#a19985",
+                        "border-light": "#e7e1cf",
+                        "border-dark": "#4c4430",
+                    },
+                    fontFamily: {
+                        display: ["Lexend", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        lg: "0.75rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
 <body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
-<div class="flex flex-col h-screen justify-between">
-<main class="flex-grow overflow-y-auto pb-6">
-<header class="flex items-center p-4">
-<button class="p-2 -m-2">
-<span class="material-symbols-outlined text-text-light dark:text-text-dark">arrow_back</span>
-</button>
-<h1 class="text-lg font-bold text-center flex-grow pr-8">Modificar Servicio</h1>
-</header>
-<div class="px-4 space-y-6">
-<div>
-<label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="establishment">ESTABLECIMIENTO</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">home</span>
-<select class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-12 pr-10 appearance-none focus:ring-primary focus:border-primary" id="establishment">
-<option>El Rancho</option>
-<option>La Soñada</option>
-<option>El Refugio</option>
-</select>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark pointer-events-none">expand_more</span>
-</div>
-</div>
-<div>
-<div class="flex justify-between items-center mb-2 px-1">
-<label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark" for="rodeo">RODEO</label>
-<button class="text-primary font-bold text-sm">+ CREAR NUEVO</button>
-</div>
-<div class="bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg">
-<div class="relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">pets</span>
-<select class="w-full h-14 bg-transparent pl-12 pr-10 appearance-none focus:outline-none" id="rodeo">
-<option>Rodeo 1</option>
-<option>Rodeo 2</option>
-<option>Rodeo 3</option>
-</select>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark pointer-events-none">expand_more</span>
-</div>
-<div class="px-4 pb-4">
-<div class="flex items-center justify-between bg-background-light dark:bg-background-dark p-3 rounded-lg">
-<span class="text-sm text-text-muted-light dark:text-text-muted-dark">Cantidad de animales</span>
-<div class="flex items-center gap-2">
-<button class="p-1 rounded-full bg-primary/20 text-primary">
-<span class="material-symbols-outlined text-base">remove</span>
-</button>
-<span class="font-bold text-text-light dark:text-text-dark">120</span>
-<button class="p-1 rounded-full bg-primary/20 text-primary">
-<span class="material-symbols-outlined text-base">add</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="entry-date">FECHA DE ENTRADA</label>
-<div class="relative">
-<input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="entry-date" type="text" value="01/03/2024"/>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="exit-date">FECHA DE SALIDA</label>
-<div class="relative">
-<input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="exit-date" placeholder="Seleccionar fecha" type="text"/>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
-</div>
-</div>
-<div>
-<label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="bulls">TOROS</label>
-<div class="relative">
-<input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="bulls" type="text" value="Toro 1, Toro 2"/>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">expand_more</span>
-</div>
-</div>
-<div>
-    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1">INSEMINACIÓN ARTIFICIAL</label>
-    <div class="flex gap-4">
-        <button id="btn-ia-no" type="button" class="flex-1 bg-primary/20 border border-primary text-primary rounded-lg h-14 justify-center items-center font-semibold">No</button>
-        <button id="btn-ia-si" type="button" class="flex-1 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg h-14 justify-center items-center font-semibold">Sí</button>
+    <div class="flex flex-col h-screen justify-between">
+        <main class="flex-grow overflow-y-auto pb-6">
+            <header class="flex items-center p-4">
+                <!-- MODIFICACIÓN 1: Se agregó el enlace al botón de atrás -->
+                <a href="registros.html" class="p-2 -m-2">
+                    <span class="material-symbols-outlined text-text-light dark:text-text-dark">arrow_back</span>
+                </a>
+                <h1 class="text-lg font-bold text-center flex-grow pr-8">Modificar Servicio</h1>
+            </header>
+            <div class="px-4 space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="establishment">ESTABLECIMIENTO</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">home</span>
+                        <select class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-12 pr-10 appearance-none focus:ring-primary focus:border-primary" id="establishment">
+                            <option>El Rancho</option>
+                            <option>La Soñada</option>
+                            <option>El Refugio</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark pointer-events-none">expand_more</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-2 px-1">
+                        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark" for="rodeo">RODEO</label>
+                        <button class="text-primary font-bold text-sm">+ CREAR NUEVO</button>
+                    </div>
+                    <div class="bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg">
+                        <div class="relative">
+                            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">pets</span>
+                            <select class="w-full h-14 bg-transparent pl-12 pr-10 appearance-none focus:outline-none" id="rodeo">
+                                <option>Rodeo 1</option>
+                                <option>Rodeo 2</option>
+                                <option>Rodeo 3</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark pointer-events-none">expand_more</span>
+                        </div>
+                        <div class="px-4 pb-4">
+                            <div class="flex items-center justify-between bg-background-light dark:bg-background-dark p-3 rounded-lg">
+                                <span class="text-sm text-text-muted-light dark:text-text-muted-dark">Cantidad de animales</span>
+                                <div class="flex items-center gap-2">
+                                    <button class="p-1 rounded-full bg-primary/20 text-primary">
+                                        <span class="material-symbols-outlined text-base">remove</span>
+                                    </button>
+                                    <span class="font-bold text-text-light dark:text-text-dark">120</span>
+                                    <button class="p-1 rounded-full bg-primary/20 text-primary">
+                                        <span class="material-symbols-outlined text-base">add</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="entry-date">FECHA DE ENTRADA</label>
+                    <div class="relative">
+                        <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="entry-date" type="text" value="01/03/2024" />
+                        <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="exit-date">FECHA DE SALIDA</label>
+                    <div class="relative">
+                        <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="exit-date" placeholder="Seleccionar fecha" type="text" />
+                        <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="bulls">TOROS</label>
+                    <div class="relative">
+                        <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="bulls" type="text" value="Toro 1, Toro 2" />
+                        <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">expand_more</span>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1">INSEMINACIÓN ARTIFICIAL</label>
+                    <div class="flex gap-4">
+                        <button id="btn-ia-no" type="button" class="flex-1 bg-primary/20 border border-primary text-primary rounded-lg h-14 justify-center items-center font-semibold">No</button>
+                        <button id="btn-ia-si" type="button" class="flex-1 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg h-14 justify-center items-center font-semibold">Sí</button>
+                    </div>
+                </div>
+                <div id="ia-fields" class="space-y-6 hidden">
+                    <div>
+                        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="ia-date">FECHA DE IA</label>
+                        <div class="relative">
+                            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="ia-date" placeholder="Seleccionar fecha" type="text" />
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="ia-bulls">TOROS IA</label>
+                        <div class="relative">
+                            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="ia-bulls" placeholder="Seleccionar toros" type="text" />
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">expand_more</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="inseminated-wombs">VIENTRES INSEMINADOS</label>
+                        <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="inseminated-wombs" placeholder="Ingresar cantidad" type="number" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1">DIAGNÓSTICO DE GESTACIÓN</label>
+                    <div class="flex gap-4">
+                        <button id="btn-dg-no" type="button" class="flex-1 bg-primary/20 border border-primary text-primary rounded-lg h-14 justify-center items-center font-semibold">No</button>
+                        <button id="btn-dg-si" type="button" class="flex-1 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg h-14 justify-center items-center font-semibold">Si</button>
+                    </div>
+                </div>
+                <!-- MODIFICACIÓN 2: Se agregó la clase 'hidden' para ocultar los campos por defecto -->
+                <div id="dg-fields" class="space-y-6 hidden">
+                    <div>
+                        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="touch-date">FECHA DE TACTO</label>
+                        <div class="relative">
+                            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="touch-date" placeholder="Seleccionar fecha" type="text" />
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="head-pregnancy">PREÑEZ CABEZA</label>
+                            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="head-pregnancy" placeholder="Cantidad" type="number" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="tail-pregnancy">PREÑEZ COLA</label>
+                            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="tail-pregnancy" placeholder="Cantidad" type="number" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="empty">VACÍAS</label>
+                            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="empty" placeholder="Cantidad" type="number" />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="pregnancy-percentage">PORCENTAJE DE PREÑEZ</label>
+                        <div class="relative">
+                            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-6 focus:ring-primary focus:border-primary" disabled="" id="pregnancy-percentage" type="number" value="85" />
+                            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="p-4 bg-background-light dark:bg-background-dark border-t border-border-light dark:border-border-dark">
+            <button class="w-full bg-primary text-text-light dark:text-text-dark font-bold h-14 rounded-lg"> Actualizar Servicio </button>
+        </footer>
     </div>
-</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Clases para los estilos de los botones (activo vs inactivo)
+            const activeClasses = ['bg-primary/20', 'border-primary', 'text-primary'];
+            const inactiveClasses = ['bg-neutral-light', 'dark:bg-neutral-dark', 'border-border-light', 'dark:border-border-dark'];
 
-<div id="ia-fields" class="space-y-6 hidden">
-    <div>
-        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="ia-date">FECHA DE IA</label>
-        <div class="relative">
-            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="ia-date" placeholder="Seleccionar fecha" type="text" />
-            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
-        </div>
-    </div>
-    <div>
-        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="ia-bulls">TOROS IA</label>
-        <div class="relative">
-            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="ia-bulls" placeholder="Seleccionar toros" type="text" />
-            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">expand_more</span>
-        </div>
-    </div>
-    <div>
-        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="inseminated-wombs">VIENTRES INSEMINADOS</label>
-        <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="inseminated-wombs" placeholder="Ingresar cantidad" type="number" />
-    </div>
-</div>
-<div>
-    <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1">DIAGNÓSTICO DE GESTACIÓN</label>
-    <div class="flex gap-4">
-        <button id="btn-dg-no" type="button" class="flex-1 bg-primary/20 border border-primary text-primary rounded-lg h-14 justify-center items-center font-semibold">No</button>
-        <button id="btn-dg-si" type="button" class="flex-1 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg h-14 justify-center items-center font-semibold">Si</button>
-    </div>
-</div>
+            // Función genérica para actualizar el estado visual de los botones
+            function updateButtonStyles(activeButton, inactiveButton) {
+                activeButton.classList.remove(...inactiveClasses.filter(c => !activeButton.classList.contains(c)));
+                inactiveButton.classList.remove(...activeClasses.filter(c => !inactiveButton.classList.contains(c)));
+                
+                activeClasses.forEach(c => !activeButton.classList.contains(c) && activeButton.classList.add(c));
+                inactiveClasses.forEach(c => !inactiveButton.classList.contains(c) && inactiveButton.classList.add(c));
+            }
 
-<div id="dg-fields" class="space-y-6">
-    <div>
-        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="touch-date">FECHA DE TACTO</label>
-        <div class="relative">
-            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-12 focus:ring-primary focus:border-primary" id="touch-date" placeholder="Seleccionar fecha" type="text" />
-            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">calendar_today</span>
-        </div>
-    </div>
-    <div class="space-y-6">
-        <div>
-            <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="head-pregnancy">PREÑEZ CABEZA</label>
-            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="head-pregnancy" placeholder="Cantidad" type="number" />
-        </div>
-        <div>
-            <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="tail-pregnancy">PREÑEZ COLA</label>
-            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="tail-pregnancy" placeholder="Cantidad" type="number" />
-        </div>
-        <div>
-            <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="empty">VACÍAS</label>
-            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg px-4 focus:ring-primary focus:border-primary" id="empty" placeholder="Cantidad" type="number" />
-        </div>
-    </div>
-    <div>
-        <label class="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark mb-2 px-1" for="pregnancy-percentage">PORCENTAJE DE PREÑEZ</label>
-        <div class="relative">
-            <input class="w-full h-14 bg-neutral-light dark:bg-neutral-dark border border-border-light dark:border-border-dark rounded-lg pl-4 pr-6 focus:ring-primary focus:border-primary" disabled="" id="pregnancy-percentage" type="number" value="85" />
-            <span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted-light dark:text-text-muted-dark">%</span>
-        </div>
-    </div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<footer class="p-4 bg-background-light dark:bg-background-dark border-t border-border-light dark:border-border-dark">
-<button class="w-full bg-primary text-text-light dark:text-text-dark font-bold h-14 rounded-lg"> Actualizar Servicio </button>
-</footer>
-</div>
-</footer>
-</div>
+            // --- LÓGICA PARA INSEMINACIÓN ARTIFICIAL ---
+            const btnIaSi = document.getElementById('btn-ia-si');
+            const btnIaNo = document.getElementById('btn-ia-no');
+            const iaFieldsContainer = document.getElementById('ia-fields');
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Clases para los estilos de los botones (activo vs inactivo)
-    const activeClasses = ['bg-primary/20', 'border-primary', 'text-primary'];
-    const inactiveClasses = ['bg-neutral-light', 'dark:bg-neutral-dark', 'border-border-light', 'dark:border-border-dark'];
+            if (btnIaSi && btnIaNo && iaFieldsContainer) {
+                btnIaSi.addEventListener('click', () => {
+                    iaFieldsContainer.classList.remove('hidden');
+                    updateButtonStyles(btnIaSi, btnIaNo);
+                });
 
-    // Función genérica para actualizar el estado visual de los botones
-    function updateButtonStyles(activeButton, inactiveButton) {
-        activeButton.classList.remove(...inactiveClasses);
-        activeButton.classList.add(...activeClasses);
-        inactiveButton.classList.remove(...activeClasses);
-        inactiveButton.classList.add(...inactiveClasses);
-    }
+                btnIaNo.addEventListener('click', () => {
+                    iaFieldsContainer.classList.add('hidden');
+                    updateButtonStyles(btnIaNo, btnIaSi);
+                });
+            }
 
-    // --- LÓGICA PARA INSEMINACIÓN ARTIFICIAL ---
-    const btnIaSi = document.getElementById('btn-ia-si');
-    const btnIaNo = document.getElementById('btn-ia-no');
-    const iaFieldsContainer = document.getElementById('ia-fields');
+            // --- LÓGICA PARA DIAGNÓSTICO DE GESTACIÓN ---
+            const btnDgSi = document.getElementById('btn-dg-si');
+            const btnDgNo = document.getElementById('btn-dg-no');
+            const dgFieldsContainer = document.getElementById('dg-fields');
 
-    if (btnIaSi && btnIaNo && iaFieldsContainer) {
-        btnIaSi.addEventListener('click', () => {
-            iaFieldsContainer.classList.remove('hidden');
-            updateButtonStyles(btnIaSi, btnIaNo);
+            if (btnDgSi && btnDgNo && dgFieldsContainer) {
+                btnDgSi.addEventListener('click', () => {
+                    dgFieldsContainer.classList.remove('hidden');
+                    updateButtonStyles(btnDgSi, btnDgNo);
+                });
+
+                btnDgNo.addEventListener('click', () => {
+                    dgFieldsContainer.classList.add('hidden');
+                    updateButtonStyles(btnDgNo, btnDgSi);
+                });
+            }
         });
-
-        btnIaNo.addEventListener('click', () => {
-            iaFieldsContainer.classList.add('hidden');
-            updateButtonStyles(btnIaNo, btnIaSi);
-        });
-    }
-
-    // --- LÓGICA PARA DIAGNÓSTICO DE GESTACIÓN ---
-    const btnDgSi = document.getElementById('btn-dg-si');
-    const btnDgNo = document.getElementById('btn-dg-no');
-    const dgFieldsContainer = document.getElementById('dg-fields');
-    
-    if (btnDgSi && btnDgNo && dgFieldsContainer) {
-        btnDgSi.addEventListener('click', () => {
-            dgFieldsContainer.classList.remove('hidden');
-            updateButtonStyles(btnDgSi, btnDgNo);
-        });
-
-        btnDgNo.addEventListener('click', () => {
-            dgFieldsContainer.classList.add('hidden');
-            updateButtonStyles(btnDgNo, btnDgSi);
-        });
-    }
-});
-</script>
-
+    </script>
 </body>
 </html>

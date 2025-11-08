@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Registrar Trabajo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#386641",
+              "background-light": "#F2F2F2",
+              "background-dark": "#1a1a1a",
+              "accent": "#F9A825",
+              "text-light": "#333333",
+              "text-dark": "#E0E0E0",
+              "border-light": "#e0e0e0",
+              "border-dark": "#444444",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            select {
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+                background-position: right 0.5rem center;
+                background-repeat: no-repeat;
+                background-size: 1.5em 1.5em;
+                padding-right: 2.5rem;
+            }
+            .dark select {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            }
+            input[type="radio"]:checked {
+                background-color: #386641;
+                border-color: #386641;
+            }
+            input[type="radio"]:checked:hover {
+                background-color: #386641;
+                border-color: #386641;
+            }
+            input[type="radio"]:focus {
+                --tw-ring-color: #386641;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex h-16 items-center border-b border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-4 justify-between">
+        <a href="registros.html" class="p-2 rounded-full hover:bg-surface-light dark:hover:bg-surface-dark">
+            <span class="material-symbols-outlined">arrow_back</span>
+        </a>
+<h1 class="text-xl font-bold flex-1 text-center">Registrar Trabajo</h1>
+<div class="w-10"></div> <!-- Spacer -->
+</header>
+<!-- Form Content -->
+<main class="flex-1 px-4 py-6 pb-28">
+<div class="mx-auto max-w-lg space-y-6">
+<!-- Date Field -->
+<label class="flex flex-col w-full">
+<p class="text-base font-medium pb-2">Fecha de Trabajo</p>
+<div class="relative flex w-full items-stretch">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark h-14 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-4" type="text" value="24 de Mayo, 2024"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none">calendar_today</span>
+</div>
+</label>
+<!-- Establishment Select -->
+<label class="flex flex-col w-full">
+<p class="text-base font-medium pb-2">Establecimiento</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark h-14 p-4 text-base font-normal">
+<option>La Aurora</option>
+<option>El Descanso</option>
+</select>
+</label>
+<!-- Rodeo Select -->
+<label class="flex flex-col w-full">
+<p class="text-base font-medium pb-2">Rodeo</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark h-14 p-4 text-base font-normal">
+<option>Vaquillas de 1ra</option>
+<option>Vacas de cría</option>
+<option>Toros</option>
+</select>
+</label>
+<!-- Action Select -->
+<label class="flex flex-col w-full">
+<p class="text-base font-medium pb-2">Acción</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark h-14 p-4 text-base font-normal">
+<option>Vacunación</option>
+<option>Desparasitación</option>
+<option>Otros</option>
+</select>
+</label>
+<!-- Conditional Other Action Field -->
+<label class="flex flex-col w-full">
+<p class="text-base font-medium pb-2">Especificar Acción</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border border-border-light dark:border-border-dark h-14 placeholder:text-gray-400 dark:placeholder:text-gray-500 p-4" placeholder="Ej: Tratamiento contra la sarna" type="text"/>
+</label>
+<!-- Animal Selection -->
+<fieldset class="space-y-4 pt-4">
+<legend class="text-base font-medium pb-2">¿A qué animales aplicar?</legend>
+<div class="space-y-4">
+<div class="flex items-center p-4 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-gray-800/20 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<input checked="" class="form-radio h-5 w-5 border-gray-400 dark:border-gray-500 bg-transparent text-primary focus:ring-primary/50" id="all-rodeo" name="application_type" type="radio" value="all"/>
+<label class="ml-3 block text-base font-medium flex-1" for="all-rodeo">A todo el rodeo</label>
+</div>
+<div class="flex items-center p-4 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-gray-800/20 has-[:checked]:border-primary has-[:checked]:ring-2 has-[:checked]:ring-primary/50">
+<input class="form-radio h-5 w-5 border-gray-400 dark:border-gray-500 bg-transparent text-primary focus:ring-primary/50" id="individual-selection" name="application_type" type="radio" value="individual"/>
+<label class="ml-3 block text-base font-medium flex-1" for="individual-selection">Seleccionar individualmente</label>
+</div>
+</div>
+</fieldset>
+<button class="flex w-full items-center justify-center gap-2 rounded-lg bg-accent/50 dark:bg-accent/40 px-6 py-4 text-base font-bold text-gray-700 dark:text-gray-300" disabled="">
+<span class="material-symbols-outlined">checklist</span>
+                Seleccionar Animales
+            </button>
+<p class="text-center text-sm text-gray-500 dark:text-gray-400">El botón se habilitará al seleccionar "Seleccionar individualmente".</p>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 right-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 border-t border-border-light dark:border-border-dark">
+<div class="mx-auto max-w-lg">
+<button class="w-full rounded-lg bg-primary py-4 text-lg font-bold text-white shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 dark:focus:ring-offset-background-dark">
+                Guardar Trabajo
+            </button>
+</div>
+</footer>
+</div>
+</body></html>
